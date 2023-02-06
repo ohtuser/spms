@@ -6,7 +6,7 @@
 <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('js/sidebar_toggle.js') }}"></script>
 {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script> --}}
-<script src="{{ asset('js/chart.js') }}"></script>
+{{-- <script src="{{ asset('js/chart.js') }}"></script> --}}
 {{-- <script src="{{ asset('js/assets/charts/chart-area-demo.js') }}"></script>
 <script src="{{ asset('js/assets/charts/chart-bar-demo.js') }}"></script> --}}
 <script src="{{ asset('js/simple-datatables.js') }}"></script>
