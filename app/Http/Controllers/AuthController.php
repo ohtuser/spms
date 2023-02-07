@@ -36,34 +36,6 @@ class AuthController extends Controller
         }
     }
 
-    // public function register(){
-    //     return view('auth.register');
-    // }
-
-    // public function register_attempt(Request $request){
-    //     $request->validate([
-    //         'name' => 'required',
-    //         'email' => 'required|unique:users,email,'.$request->row_id,
-    //         'password' => 'required|min:3',
-    //         'company_name' => 'required'
-    //     ]);
-
-    //     $data_company = [
-    //         'name' => $request->company_name
-    //     ];
-    //     CommonModel::insertRow('company',$data_company);
-    //     $company_info = CommonModel::findRow('company','name',$request->company_name,1);
-
-    //     $data_user = [
-    //         'name' => $request->name,
-    //         'email' => $request->email,
-    //         'password' => Hash::make($request->password),
-    //         'company_id' => $company_info[0]->id
-    //     ];
-    //     CommonModel::insertRow('users',$data_user);
-    //     return response()->json(requestSuccess('Register Success', '', '/',500),200);
-    // }
-
     function logout(){
         Auth::guard('auth')->logout();
         return redirect()->route('login');

@@ -113,6 +113,8 @@
                 $('#row_id').val(res.info.id);
                 $('#name_form').val(res.info.name);
                 $('#email_form').val(res.info.email);
+                $('#designation_form').val(res.info.designation).trigger('change');
+                $('#mobile_form').val(res.info.mobile);
                 closeSweetAlert();
             }, 'get', "{{ route('teacher.edit') }}", {id});
         }
