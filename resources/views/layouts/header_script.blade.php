@@ -14,3 +14,5 @@
 <link rel="stylesheet" href="{{ asset('css/flatpickr.min.css') }}">
 {{-- custom css --}}
 <link rel="stylesheet" href="{{ asset('css/custom_style.css') }}">
+
+<script src="{{ asset('jquery.js') }}"></script>

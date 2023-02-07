@@ -2,8 +2,16 @@
     <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
         <div class="sb-sidenav-menu">
             <div class="nav">
-
-                {{-- <div class="sb-sidenav-menu-heading">Interface</div>
+                <a class="nav-link" href="{{ route('admin.index') }}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                    Admins
+                </a>
+                <a class="nav-link" href="{{ route('teacher.index') }}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                    Teacher
+                </a>
+{{--
+                <div class="sb-sidenav-menu-heading">Interface</div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                     <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                     Layouts
@@ -46,15 +54,7 @@
                         </div>
                     </nav>
                 </div>
-                <div class="sb-sidenav-menu-heading">Addons</div>
-                <a class="nav-link" href="charts.html">
-                    <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                    Charts
-                </a>
-                <a class="nav-link" href="tables.html">
-                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                    Tables
-                </a> --}}
+                <div class="sb-sidenav-menu-heading">Addons</div>  --}}
             </div>
         </div>
         {{-- <div class="sb-sidenav-footer">

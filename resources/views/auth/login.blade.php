@@ -8,6 +8,7 @@
     <title>Login</title>
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <script src="{{ asset('jquery.js') }}"></script>
 </head>
 
 <body>

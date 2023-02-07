@@ -46,7 +46,7 @@
         @include('layouts.sidebar')
         <div id="layoutSidenav_content">
             <main>
-                <div class="container-fluid px-4">
+                <div class="container-fluid px-4 mt-2">
                     @yield('content')
                 </div>
             </main>
@@ -55,8 +55,8 @@
         </div>
     </div>
     @include('layouts.footer_script')
-    @include('layouts.common')
-    @yield('js')
+    {{-- @include('layouts.common') --}}
+    @yield('script')
 </body>
 
 </html>
