@@ -1,10 +1,13 @@
 <style>
+    p{
+        font-size: 12px;
+    }
     .commonListBody table th, .commonListBody table td{
-        padding: 5px 10px!important;
+        padding: 2px 10px!important;
     }
     .btn-xs{
         padding: 0.125rem 0.25rem;
-        font-size: 0.875rem;
+        font-size: 0.700rem;
         line-height: 1.5;
         border-radius: 0.2rem;
     }
@@ -64,6 +67,7 @@
         border: 1px solid #000;
         background: #fff;
         vertical-align: top;
+        font-size: 12px;
     }
 
     #loaded_info thead th {

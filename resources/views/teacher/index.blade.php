@@ -10,7 +10,7 @@
         <div class="card-header card-header-s">
             <div class="d-flex justify-content-between">
                 <h5 class="mb-0">Teachers</h5>
-                <button class="btn btn-sm btn-warning" onclick="addNewDrawer2()">Add</button>
+                <button class="btn btn-xs btn-warning" onclick="addNewDrawer2()">Add</button>
             </div>
         </div>
     </div>

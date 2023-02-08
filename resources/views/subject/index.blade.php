@@ -9,7 +9,7 @@
     <div class="card sina-card mt-0 mb-1">
         <div class="card-header card-header-s">
             <div class="d-flex justify-content-between">
-                <h5 class="mb-0">Admins</h5>
+                <h5 class="mb-0">Subject</h5>
                 <button class="btn btn-xs btn-warning" onclick="addNewDrawer2()">Add</button>
             </div>
         </div>
@@ -36,19 +36,23 @@
                             margin-bottom: 0;
                         }
                     </style>
-                    <form action="{{ route('admin.store') }}" class="form_submit">
+                    <form action="{{ route('subject.store') }}" class="form_submit">
                         <input type="hidden" name="row_id" id="row_id">
                         <div class="form-group">
                             <label for="">Name</label>
                             <input type="text" class="form-control" name="name" id="name_form">
                         </div>
                         <div class="form-group">
-                            <label for="">Email</label>
-                            <input type="text" class="form-control" name="email" id="email_form">
+                            <label for="">Code</label>
+                            <input type="text" class="form-control" name="code" id="code_form">
                         </div>
-                        <div class="form-group password_body">
-                            <label for="">Password</label>
-                            <input type="text" class="form-control" name="password" id="password">
+                        <div class="form-group">
+                            <label for="">Credit</label>
+                            <input type="number" class="form-control" name="credit" id="credit_form">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Description</label>
+                            <textarea class="form-control" name="description" id="description_form"></textarea>
                         </div>
                         <div class="form-group mt-2">
                             <button class="btn btn-sm btn-success">Save</button>
@@ -67,17 +71,13 @@
     <script>
 
         function addNewDrawer2(){
-
-            $('.password_body').show();
             addNewDrawer();
         }
 
-        let ajaxUrl = "{{ route('admin.index') }}";
+        let ajaxUrl = "{{ route('subject.index') }}";
         let ajaxData = {};
         $(document).ready(function(){
             loadData();
-
-            console.log("pppppppppppppp");
         });
 
         function loadData(){
@@ -100,9 +100,11 @@
                 addNewDrawer();
                 $('#row_id').val(res.info.id);
                 $('#name_form').val(res.info.name);
-                $('#email_form').val(res.info.email);
+                $('#code_form').val(res.info.code);
+                $('#credit_form').val(res.info.credit);
+                $('#description_form').val(res.info.description);
                 closeSweetAlert();
-            }, 'get', "{{ route('admin.edit') }}", {id});
+            }, 'get', "{{ route('subject.edit') }}", {id});
         }
     </script>
 

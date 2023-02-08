@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,12 @@ Route::middleware('permission_check')->group(function () {
         Route::get('/', [TeacherController::class, 'teacher'])->name('index');
         Route::post('store', [TeacherController::class, 'store'])->name('store');
         Route::get('edit', [TeacherController::class, 'edit'])->name('edit');
+    });
+
+    Route::name('subject.')->prefix('subject')->group(function(){
+        Route::get('/', [SubjectController::class, 'subject'])->name('index');
+        Route::post('store', [SubjectController::class, 'store'])->name('store');
+        Route::get('edit', [SubjectController::class, 'edit'])->name('edit');
     });
 });
 Route::get('login', [AuthController::class, 'login'])->name('login');
