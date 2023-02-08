@@ -35,6 +35,7 @@ trait CommonList{
                 <tr class="bg-dark">
                     <th class="text-white">Sl</th>
                     <th class="text-white">Name</th>
+                    <th class="text-white">ID</th>
                     <th class="text-white">Email</th>
                     <th class="text-white">Designation</th>
                     <th class="text-white">Mobile</th>
@@ -49,6 +50,7 @@ trait CommonList{
                 $returnHtml .= '<tr>
                     <td>'.((($page-1)*$per_page)+$key+1).'</td>
                     <td>'.($d->name).'</td>
+                    <td>'.($d->code).'</td>
                     <td>'.($d->email).'</td>
                     <td>'.(getTeacherDesignation($d->designation)).'</td>
                     <td>'.($d->mobile).'</td>
@@ -70,6 +72,7 @@ trait CommonList{
                     <th class="text-white">Code</th>
                     <th class="text-white">Credit</th>
                     <th class="text-white">Description</th>
+                    <th class="text-white">Mark Distribution</th>
                     <th class="text-white">Action</th>
                 </tr>
             </thead><tbody>';
@@ -84,6 +87,7 @@ trait CommonList{
                     <td>'.($d->code).'</td>
                     <td>'.($d->credit).'</td>
                     <td>'.($d->description).'</td>
+                    <td>'.(getMarkDistrbution($d->mark_distribution)).'</td>
                     <td>'.'<button onclick="edit('.$d->id.')" class="btn btn-warning btn-xs">Edit</button>'.'</td>
                 </tr>';
             }

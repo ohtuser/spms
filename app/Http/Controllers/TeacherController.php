@@ -25,6 +25,7 @@ class TeacherController extends Controller
     public function store(Request $request){
         $request->validate([
             'name' => 'required',
+            'code' => 'required',
             'email' => 'required|email'
         ]);
 
@@ -36,6 +37,7 @@ class TeacherController extends Controller
 
         $insert_data = [
             'name' => $request->name,
+            'code' => $request->code,
             'email' => $request->email,
             'designation' => $request->designation,
             'mobile' => $request->mobile,

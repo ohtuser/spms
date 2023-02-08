@@ -26,7 +26,8 @@ class SubjectController extends Controller
         $insert_data = $request->validate([
             'name' => 'required',
             'code' => 'required',
-            'credit' => 'required'
+            'credit' => 'required',
+            'mark_distribution' => 'required'
         ]);
 
         $insert_data['description'] = $request->description;

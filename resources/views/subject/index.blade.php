@@ -51,6 +51,14 @@
                             <input type="number" class="form-control" name="credit" id="credit_form">
                         </div>
                         <div class="form-group">
+                            <label for="">Mark Distribution</label>
+                            <select class="form-control select_2" name="mark_distribution" id="mark_form">
+                                @foreach (getMarkDistrbution() as $key=>$m)
+                                    <option value="{{ $key }}">{{ $m }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label for="">Description</label>
                             <textarea class="form-control" name="description" id="description_form"></textarea>
                         </div>
@@ -103,6 +111,7 @@
                 $('#code_form').val(res.info.code);
                 $('#credit_form').val(res.info.credit);
                 $('#description_form').val(res.info.description);
+                $('#mark_form').val(res.info.mark_distribution).trigger('change');
                 closeSweetAlert();
             }, 'get', "{{ route('subject.edit') }}", {id});
         }

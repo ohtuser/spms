@@ -43,6 +43,10 @@
                             <input type="text" class="form-control" name="name" id="name_form">
                         </div>
                         <div class="form-group">
+                            <label for="">ID</label>
+                            <input type="text" class="form-control" name="code" id="code_form">
+                        </div>
+                        <div class="form-group">
                             <label for="">Email</label>
                             <input type="text" class="form-control" name="email" id="email_form">
                         </div>
@@ -112,6 +116,7 @@
                 addNewDrawer();
                 $('#row_id').val(res.info.id);
                 $('#name_form').val(res.info.name);
+                $('#code_form').val(res.info.code);
                 $('#email_form').val(res.info.email);
                 $('#designation_form').val(res.info.designation).trigger('change');
                 $('#mobile_form').val(res.info.mobile);

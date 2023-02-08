@@ -32,3 +32,9 @@ function getTeacherDesignation($type=null){
         return $arr;
     }
 }
+
+function getMarkDistrbution($type=null){
+    $m = ['1'=>'Theory', '2' => 'Sessional'];
+    if($type) return $m[$type];
+    else return $m;
+}

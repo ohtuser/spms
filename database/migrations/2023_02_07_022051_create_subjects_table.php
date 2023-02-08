@@ -19,6 +19,7 @@ class CreateSubjectsTable extends Migration
             $table->string('code');
             $table->string('description')->nullable();
             $table->double('credit');
+            $table->tinyInteger('mark_distribution')->comment('1=Theory,2=Sessional');
             $table->timestamps();
         });
     }
