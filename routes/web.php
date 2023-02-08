@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CommonTaskController;
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\UserController;
@@ -22,10 +24,28 @@ Route::middleware('permission_check')->group(function () {
         Route::get('edit', [TeacherController::class, 'edit'])->name('edit');
     });
 
+    Route::name('student.')->prefix('student')->group(function(){
+        Route::get('/', [StudentController::class, 'student'])->name('index');
+        Route::post('store', [StudentController::class, 'store'])->name('store');
+        Route::get('edit', [StudentController::class, 'edit'])->name('edit');
+    });
+
     Route::name('subject.')->prefix('subject')->group(function(){
         Route::get('/', [SubjectController::class, 'subject'])->name('index');
         Route::post('store', [SubjectController::class, 'store'])->name('store');
         Route::get('edit', [SubjectController::class, 'edit'])->name('edit');
+    });
+
+    Route::name('trimester.')->prefix('trimester')->group(function(){
+        Route::get('/', [CommonTaskController::class, 'trimester'])->name('index');
+        // Route::post('store', [UserController::class, 'store'])->name('store');
+        // Route::get('edit', [UserController::class, 'edit'])->name('edit');
+    });
+
+    Route::name('batch.')->prefix('batch')->group(function(){
+        Route::get('/', [CommonTaskController::class, 'batch'])->name('index');
+        // Route::post('store', [UserController::class, 'store'])->name('store');
+        // Route::get('edit', [UserController::class, 'edit'])->name('edit');
     });
 });
 Route::get('login', [AuthController::class, 'login'])->name('login');

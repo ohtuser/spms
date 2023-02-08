@@ -10,9 +10,21 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                     Teacher
                 </a>
+                <a class="nav-link" href="{{ route('student.index') }}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-user-graduate"></i></div>
+                    Students
+                </a>
                 <a class="nav-link" href="{{ route('subject.index') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-book"></i></div>
                     Subject
+                </a>
+                <a class="nav-link" href="{{ route('batch.index') }}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-school"></i></div>
+                    Batch
+                </a>
+                <a class="nav-link" href="{{ route('trimester.index') }}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-school"></i></div>
+                    Trimester
                 </a>
 {{--
                 <div class="sb-sidenav-menu-heading">Interface</div>
