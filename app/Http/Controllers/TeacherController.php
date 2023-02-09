@@ -81,7 +81,7 @@ class TeacherController extends Controller
             <thead>
                 <tr>
                     <th>Sl</th>
-                    <th>Subject</th>
+                    <th>Course</th>
                     <th>Batch</th>
                 </tr>
             </thead><tbody>';

@@ -518,6 +518,7 @@ class ComposerStaticInit54c3e0aefd2a1bfd6f247d19c0a49f35
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Models\\Batch' => __DIR__ . '/../..' . '/app/Models/Batch.php',
         'App\\Models\\Student' => __DIR__ . '/../..' . '/app/Models/Student.php',
+        'App\\Models\\StudentSubjectAssign' => __DIR__ . '/../..' . '/app/Models/StudentSubjectAssign.php',
         'App\\Models\\Subject' => __DIR__ . '/../..' . '/app/Models/Subject.php',
         'App\\Models\\TeacherSubjectAssign' => __DIR__ . '/../..' . '/app/Models/TeacherSubjectAssign.php',
         'App\\Models\\Trimester' => __DIR__ . '/../..' . '/app/Models/Trimester.php',

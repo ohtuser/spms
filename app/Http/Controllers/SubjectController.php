@@ -38,7 +38,7 @@ class SubjectController extends Controller
         }else{
             Subject::create($insert_data);
         }
-        return response()->json(['message' => 'Subject Created/Updated', 'redirectTo' => 'close', 'call' => 'loadData', 'description'=>'', 'timer'=>500]);
+        return response()->json(['message' => 'Course Created/Updated', 'redirectTo' => 'close', 'call' => 'loadData', 'description'=>'', 'timer'=>500]);
     }
 
     public function edit(Request $request){

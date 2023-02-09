@@ -30,6 +30,9 @@ Route::middleware('permission_check')->group(function () {
         Route::get('/', [StudentController::class, 'student'])->name('index');
         Route::post('store', [StudentController::class, 'store'])->name('store');
         Route::get('edit', [StudentController::class, 'edit'])->name('edit');
+        Route::get('subject-assign', [StudentController::class, 'subjectAssign'])->name('subject_assign');
+        Route::get('assigned-subject', [StudentController::class, 'assignedSubjet'])->name('assigned_subject');
+        Route::post('subject-assign-store', [StudentController::class, 'subjectAssignStore'])->name('subject_assign_store');
     });
 
     Route::name('subject.')->prefix('subject')->group(function(){

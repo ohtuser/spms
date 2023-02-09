@@ -28,6 +28,7 @@ return array(
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
     'App\\Models\\Batch' => $baseDir . '/app/Models/Batch.php',
     'App\\Models\\Student' => $baseDir . '/app/Models/Student.php',
+    'App\\Models\\StudentSubjectAssign' => $baseDir . '/app/Models/StudentSubjectAssign.php',
     'App\\Models\\Subject' => $baseDir . '/app/Models/Subject.php',
     'App\\Models\\TeacherSubjectAssign' => $baseDir . '/app/Models/TeacherSubjectAssign.php',
     'App\\Models\\Trimester' => $baseDir . '/app/Models/Trimester.php',
