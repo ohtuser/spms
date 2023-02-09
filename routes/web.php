@@ -21,6 +21,9 @@ Route::middleware('permission_check')->group(function () {
         Route::get('/', [TeacherController::class, 'teacher'])->name('index');
         Route::post('store', [TeacherController::class, 'store'])->name('store');
         Route::get('edit', [TeacherController::class, 'edit'])->name('edit');
+        Route::get('subject-assign', [TeacherController::class, 'subjectAssign'])->name('subject_assign');
+        Route::get('assigned-subject', [TeacherController::class, 'assignedSubjet'])->name('assigned_subject');
+        Route::post('subject-assign-store', [TeacherController::class, 'subjectAssignStore'])->name('subject_assign_store');
     });
 
     Route::name('student.')->prefix('student')->group(function(){
@@ -37,14 +40,10 @@ Route::middleware('permission_check')->group(function () {
 
     Route::name('trimester.')->prefix('trimester')->group(function(){
         Route::get('/', [CommonTaskController::class, 'trimester'])->name('index');
-        // Route::post('store', [UserController::class, 'store'])->name('store');
-        // Route::get('edit', [UserController::class, 'edit'])->name('edit');
     });
 
     Route::name('batch.')->prefix('batch')->group(function(){
         Route::get('/', [CommonTaskController::class, 'batch'])->name('index');
-        // Route::post('store', [UserController::class, 'store'])->name('store');
-        // Route::get('edit', [UserController::class, 'edit'])->name('edit');
     });
 });
 Route::get('login', [AuthController::class, 'login'])->name('login');

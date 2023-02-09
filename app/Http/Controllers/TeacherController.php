@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Batch;
+use App\Models\Subject;
+use App\Models\TeacherSubjectAssign;
+use App\Models\Trimester;
 use App\Models\User;
 use App\Traits\CommonList;
 use Illuminate\Http\Request;
@@ -26,7 +30,7 @@ class TeacherController extends Controller
         $request->validate([
             'name' => 'required',
             'code' => 'required',
-            'email' => 'required|email'
+            'email' => 'required|email|unique:users,email,'.$request->row_id
         ]);
 
         if(!$request->row_id){
@@ -57,5 +61,58 @@ class TeacherController extends Controller
     public function edit(Request $request){
         $info = User::findOrFail($request->id);
         return response()->json(['info'=>$info]);
+    }
+
+    public function subjectAssign(){
+        $data['teachers'] = User::where('user_type', 2)->get();
+        $data['trimesters'] = Trimester::get();
+        $data['batches'] = Batch::get();
+        $data['subjects'] = Subject::get();
+        return view('teacher.subject_assign', $data);
+    }
+
+    public function assignedSubjet(Request $request){
+        $infos = TeacherSubjectAssign::with('getBatch','getSubject')
+            ->where('teacher', $request->teacher)
+            ->where('trimester', $request->trimester)
+            ->get();
+
+        $html = '<table class="table">
+            <thead>
+                <tr>
+                    <th>Sl</th>
+                    <th>Subject</th>
+                    <th>Batch</th>
+                </tr>
+            </thead><tbody>';
+            foreach($infos as $key=>$i){
+                $html .= '<tr>
+                    <td>'.($key+1).'</td>
+                    <td>'.$i->getSubject->name.'</td>
+                    <td>'.$i->getBatch->name.'</td>
+                </tr>';
+            }
+            $html .= '</tbody></table>';
+            return response()->json(['html' => $html]);
+    }
+
+    public function subjectAssignStore(Request $request){
+        $info = $request->validate([
+            'teacher' => 'required',
+            'subject' => 'required',
+            'batch' => 'required',
+            'trimester' => 'required',
+        ]);
+
+        $is_exist = TeacherSubjectAssign::where($info)
+            ->where('id', '!=', $request->row_id)
+            ->first();
+
+        if($is_exist){
+            return response()->json(['message' => 'Already Assigned'], 421);
+        }else{
+            TeacherSubjectAssign::create($info);
+            return response()->json(['message' => 'Teacher Course Assigned', 'redirectTo' => 'close', 'call' => 'loadData', 'description'=>'', 'timer'=>500]);
+        }
     }
 }
