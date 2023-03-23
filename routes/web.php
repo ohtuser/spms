@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\TeacherManagementController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -47,6 +48,19 @@ Route::middleware('permission_check')->group(function () {
 
     Route::name('batch.')->prefix('batch')->group(function(){
         Route::get('/', [CommonTaskController::class, 'batch'])->name('index');
+    });
+
+    Route::name('teacher.teacher.')->prefix('teacher/teacher/')->group(function(){
+        Route::get('/', [TeacherManagementController::class, 'assignedSubjet'])->name('assigned_subject');
+        Route::get('set_mark', [TeacherManagementController::class, 'setMark'])->name('set_mark');
+        Route::post('set_mark_store', [TeacherManagementController::class, 'setMarkStore'])->name('set_mark_store');
+
+        Route::get('get_mark', [TeacherManagementController::class, 'getMark'])->name('get_mark');
+        // Route::post('store', [TeacherController::class, 'store'])->name('store');
+        // Route::get('edit', [TeacherController::class, 'edit'])->name('edit');
+        // Route::get('subject-assign', [TeacherController::class, 'subjectAssign'])->name('subject_assign');
+        // Route::get('assigned-subject', [TeacherController::class, 'assignedSubjet'])->name('assigned_subject');
+        // Route::post('subject-assign-store', [TeacherController::class, 'subjectAssignStore'])->name('subject_assign_store');
     });
 });
 Route::get('login', [AuthController::class, 'login'])->name('login');
